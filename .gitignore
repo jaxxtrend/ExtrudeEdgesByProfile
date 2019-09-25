@@ -100,3 +100,5 @@ venv.bak/
 ExtrudeEdgesByProfile.zip
 SweepByProfile.py
 testEnv.blend
+ExtrudeEdgesByProfile.code-workspace
+.vscode
