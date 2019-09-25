@@ -11,16 +11,13 @@ class SimpletoolProps(PropertyGroup):
                  type=bpy.types.Object
                 )
 
-
 def register():
-
     bpy.utils.register_class(SimpletoolProps)
-    
-
+    bpy.types.Scene.simpletool = PointerProperty(type=SimpletoolProps)
 
 def unregister():
     bpy.utils.unregister_class(SimpletoolProps)
-    
+    del bpy.types.Scene.simpletool
 
-if __name__ == "__main__":
-    register()
+# if __name__ == "__main__":
+#     register()
