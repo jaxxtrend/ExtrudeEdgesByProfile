@@ -1,5 +1,3 @@
-
-
 import bpy
 from bpy.types import Operator
 
@@ -25,10 +23,8 @@ class SweepOp(bpy.types.Operator):
 def register():
     bpy.utils.register_class(SweepOp)
 
-
 def unregister():
     bpy.utils.unregister_class(SweepOp)
-
 
 if __name__ == "__main__":
     register()

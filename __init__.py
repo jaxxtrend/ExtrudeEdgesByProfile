@@ -50,31 +50,26 @@ class VIEW3D_PT_SimpleToolPanel(Panel):
         col.operator('mesh.sweep_by_profile', text="Sweep") 
  
 classes = (
-    SimpletoolProps,
     VIEW3D_PT_SimpleToolPanel,
 )
  
 def register():
     for cls in classes:
-        bpy.utils.register_class(cls)    
-    
-    bpy.types.Scene.simpletool = PointerProperty(type=SimpletoolProps)
+        bpy.utils.register_class(cls)
 
-    operators.register()
     properties.register()
-    
+    operators.register()
+
+    bpy.types.Scene.simpletool = PointerProperty(type=SimpletoolProps)
  
 def unregister():
-
-    operators.unregister()
-    properties.unregister()
-    
     del bpy.types.Scene.simpletool
 
     for cls in reversed(classes):
         bpy.utils.unregister_class(cls)
 
-       
+    operators.unregister()
+    properties.unregister()
  
 if __name__ == "__main__":
     register()
