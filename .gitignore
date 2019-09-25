@@ -102,3 +102,8 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+SweepByProfile.py
+testEnv.blend
+ExtrudeEdgesByProfile.code-workspace
+ExtrudeEdgesByProfile.zip
+ExtrudeEdgesByProfile.code-workspace

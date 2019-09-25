@@ -4,10 +4,7 @@
 			"path": "."
 		},
 		{
-			"path": "C:\\Program Files\\Blender Foundation\\Blender\\2.80\\scripts\\addons\\ant_landscape"
-		},
-		{
-			"path": "C:\\Program Files\\Blender Foundation\\Blender\\2.80\\scripts\\startup\\bl_ui"
+			"path": "C:\\Program Files\\Blender Foundation\\Blender\\2.80\\scripts\\addons"
 		}
 	],
 	"settings": {}
