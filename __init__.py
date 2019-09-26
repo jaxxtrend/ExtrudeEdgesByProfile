@@ -1,5 +1,23 @@
 # -*- coding: utf-8 -*-
 
+# ##### BEGIN GPL LICENSE BLOCK #####
+#
+#  This program is free software; you can redistribute it and/or
+#  modify it under the terms of the GNU General Public License
+#  as published by the Free Software Foundation; either version 2
+#  of the License, or (at your option) any later version.
+#
+#  This program is distributed in the hope that it will be useful,
+#  but WITHOUT ANY WARRANTY; without even the implied warranty of
+#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#  GNU General Public License for more details.
+#
+#  You should have received a copy of the GNU General Public License
+#  along with this program; if not, write to the Free Software Foundation,
+#  Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+#
+# ##### END GPL LICENSE BLOCK #####
+
 bl_info = {
     "name": "Sweep by profile",
     "author": "JaxxTrend",
@@ -14,49 +32,16 @@ bl_info = {
 import bpy
 from . import operators
 from . import properties
-from . properties import SimpletoolProps
-
-from bpy.types import (
-        Panel,
-        PropertyGroup,
-        AddonPreferences,
-        PointerProperty,
-        )
-
-# GUI
-class VIEW3D_PT_SimpleToolPanel(Panel):
-    bl_label = "Simpletool"
-    bl_space_type = "VIEW_3D"
-    bl_region_type = "UI"
-    bl_category = "Create"
-    bl_context = "objectmode"
-    bl_options = {'DEFAULT_CLOSED'}
-   
-    @classmethod
-    def poll(cls, context):
-        ob = bpy.context.active_object
-        return (ob and ob.type == 'MESH')
- 
-    def draw(self, context):
-       
-        active_object = context.active_object
-       
-        simpletool = context.scene.simpletool
- 
-        layout = self.layout
-        col = layout.column()
-        col.prop(simpletool, "profile_obj")
-        col = layout.column()
-        col.operator('mesh.sweep_by_profile', text="Sweep")
+from . import gui
 
 def register():
-    bpy.utils.register_class(VIEW3D_PT_SimpleToolPanel)
+    gui.register()
     operators.register()
     properties.register()
 
 
 def unregister():
-    bpy.utils.unregister_class(VIEW3D_PT_SimpleToolPanel)
+    gui.unregister()
     operators.unregister()
     properties.unregister()
 
