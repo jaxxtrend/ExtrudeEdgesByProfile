@@ -28,11 +28,20 @@ bl_info = {
     "wiki_url": "",
     "category": "Mesh",
 }
- 
+
+if "bpy" in locals():
+    import importlib
+    importlib.reload(operators)
+    importlib.reload(properties)
+    importlib.reload(gui)
+    
+else:
+    
+    from . import operators
+    from . import properties
+    from . import gui
+
 import bpy
-from . import operators
-from . import properties
-from . import gui
 
 def register():
     gui.register()
