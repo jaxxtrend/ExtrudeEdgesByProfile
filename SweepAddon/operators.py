@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 import bpy
 from bpy.types import Operator
 
@@ -10,7 +13,10 @@ class SweepOp(bpy.types.Operator):
    
     def execute(self, context):
         # Здесь будем что-то делать
-        print("We will do something here")
+        i = 0
+        while i<4:
+            i += 1
+            print("We will do something here")
        
         simpletool = context.scene.simpletool
        
@@ -26,5 +32,5 @@ def register():
 def unregister():
     bpy.utils.unregister_class(SweepOp)
 
-# if __name__ == "__main__":
-#     register()
+if __name__ == "__main__":
+    register()

@@ -1,4 +1,3 @@
-
 import bpy
 
 from bpy.props import PointerProperty
@@ -19,5 +18,5 @@ def unregister():
     bpy.utils.unregister_class(SimpletoolProps)
     del bpy.types.Scene.simpletool
 
-# if __name__ == "__main__":
-#     register()
+if __name__ == "__main__":
+    register()
